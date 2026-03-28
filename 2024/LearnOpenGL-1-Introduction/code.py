@@ -59,7 +59,7 @@ class Code(Group):
 
 opening_typ = '''
 #set par(first-line-indent: 2em, justify: true)
-#set text(font: "Noto Sans S Chinese", fill: luma(70%))
+#set text(font: "Noto Sans CJK SC", fill: luma(70%))
 #set page(width: 40em, height: auto)
 
 #let empty-par = par[#box()]

@@ -914,7 +914,7 @@ class Question(Template):
             color=PURPLE_E,
             stroke_alpha=0.4
         ).show()
-        Text('?', font='Noto Sans S Chinese Medium', font_size=80).show()
+        Text('?', font='Noto Sans CJK SC', font_size=80).show()
 
         self.play_audio(Audio('视频编码2.mp3'), delay=1, begin=139.3, end=145.3)
         self.forward()

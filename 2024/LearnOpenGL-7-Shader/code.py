@@ -191,7 +191,7 @@ typ1_src = '''
     body
 }
 
-#set text(font: "Noto Sans S Chinese")
+#set text(font: "Noto Sans CJK SC")
 
 #grid(
     columns: 2,
@@ -392,7 +392,7 @@ class GLSL(SubtitleTemplate2):
         st_vector = Group(Arrow(DL * 0.8, UR * 0.8), Text('向量'))
         st_matrix = TypstText(
             '#let mattxt = {\n'
-            '    set text(font: "Noto Sans S Chinese")\n'
+            '    set text(font: "Noto Sans CJK SC")\n'
             '    [矩阵]\n'
             '}\n'
             '$ mat(delim: "[", ,,;space,mattxt,space;,,) $'
@@ -977,7 +977,7 @@ class InputAndOutput(SubtitleTemplate2):
 
         tip_cpp_opengl = TypstText(
             '''
-            #set text(font: "Noto Sans S Chinese", size: 0.5em, fill: gray)
+            #set text(font: "Noto Sans CJK SC", size: 0.5em, fill: gray)
             在 C++ 传递 OpenGL 顶点属性可能更倾向于使用类似于 `layout (location = 0)`  的标识符，\\
             但是这里我们使用 ModernGL 推荐的方式
             '''

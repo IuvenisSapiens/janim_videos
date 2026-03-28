@@ -12,7 +12,7 @@
 
 #set par(justify: true, leading: 0.8em)
 #set text(font: "Noto Serif CJK SC")
-#show raw: set text(font: ("Consolas", "LXGW WenKai Lite"))
+#show raw: set text(font: ("Consolas", "LXGW WenKai GB Lite"))
 
 #let p(pin-name, body, ..args) = pinit-point-to(
   fill: blue.lighten(75%),

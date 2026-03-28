@@ -36,7 +36,7 @@ class Logo(Timeline):
         circle = Circle(radius=0.15, fill_alpha=1, stroke_alpha=0, color=GREEN).show()
 
         cursor = Cursor(color=BLUE)
-        txt = Text('JAnim', font='LXGW WenKai Lite', font_size=80)
+        txt = Text('JAnim', font='LXGW WenKai GB Lite', font_size=80)
 
         g = Group(cursor, txt).show()
         g.points.arrange()

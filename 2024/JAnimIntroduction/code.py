@@ -494,7 +494,7 @@ class Functions(SubtitleTemplate2):
         t = self.aas(
             '40.mp3',
             '''
-            #set text(font: ("Consolas", "Noto Sans S Chinese"))
+            #set text(font: ("Consolas", "Noto Sans CJK SC"))
             #stack(dir: ltr)[
                 例如 manim 中 Transform(
             ][
@@ -533,7 +533,7 @@ class Functions(SubtitleTemplate2):
         t = self.aas(
             '41.mp3',
             '''
-            #set text(font: ("Consolas", "Noto Sans S Chinese"))
+            #set text(font: ("Consolas", "Noto Sans CJK SC"))
             #stack(dir: ltr, spacing: 2pt)[
                 将插值的结果直接设置到
             ][
@@ -591,7 +591,7 @@ class Functions(SubtitleTemplate2):
         t = self.aas(
             '44.mp3',
             '''
-            #set text(font: ("Consolas", "Noto Sans S Chinese"))
+            #set text(font: ("Consolas", "Noto Sans CJK SC"))
             #stack(dir: ltr, spacing: 2pt)[
                 不会对
             ][
@@ -637,7 +637,7 @@ class Functions(SubtitleTemplate2):
 
 
 limits_typ = '''
-#set text(font: ("Consolas", "Noto Sans S Chinese"), size: 7pt)
+#set text(font: ("Consolas", "Noto Sans CJK SC"), size: 7pt)
 #set par(justify: true)
 #set page(width: 550pt)
 
@@ -743,7 +743,7 @@ class Examples(Template):
 
 class SpecialThanks(SubtitleTemplate2):
     CONFIG = Config(
-        font='LXGW WenKai Lite'
+        font='LXGW WenKai GB Lite'
     )
     name = '特别鸣谢'
 

@@ -156,7 +156,7 @@ class Background(Template):
         pack = SVGItem('pack.svg', height=1)
         pack.points.move_to(opengl)
 
-        spec = Text('Specification', font='LXGW WenKai Lite', font_size=16)
+        spec = Text('Specification', font='LXGW WenKai GB Lite', font_size=16)
         spec.points.move_to(pack).shift(DOWN * 0.2)
 
         camera_stat = self.camera.store()
@@ -353,7 +353,7 @@ class Background(Template):
 
 typ1_src = '''
 #set par(first-line-indent: 2em, justify: true)
-#set text(font: "Noto Sans S Chinese")
+#set text(font: "Noto Sans CJK SC")
 #set page(margin: 12em)
 #par(box[])
 
@@ -372,7 +372,7 @@ class CoreModeAndImmediateMode_Subtitle(SubtitleTemplate):
 
 
 typ2_typ3_template = '''
-#set text(font: "LXGW WenKai Lite", weight: "bold")
+#set text(font: "LXGW WenKai GB Lite", weight: "bold")
 #show text: t => align(center, t)
 
 #box(
@@ -959,7 +959,7 @@ class StateMachine(Template):
 
 typ4_src = '''
 #set par(first-line-indent: 2em, justify: true)
-#set text(font: "Noto Sans S Chinese")
+#set text(font: "Noto Sans CJK SC")
 #set page(margin: 14.7em)
 #par(box[])
 

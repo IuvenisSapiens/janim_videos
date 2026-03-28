@@ -7,7 +7,7 @@ class YukiWaNaniiro(Timeline):
         background_color=Color(BLUE_A)
     )
     def construct(self):
-        txt = Text('参考文献：BV1jp4y1Z75Z', font=['Consolas', 'LXGW WenKai Lite'], color=BLUE_E).show()
+        txt = Text('参考文献：BV1jp4y1Z75Z', font=['Consolas', 'LXGW WenKai GB Lite'], color=BLUE_E).show()
         txt.points.to_border(UL)
 
         styles = dict(color=BLUE, glow_alpha=0.75, glow_color=WHITE)

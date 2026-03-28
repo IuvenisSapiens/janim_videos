@@ -415,7 +415,7 @@ class FragInterp(Template):
             radius=0.1
         )
 
-        txt_fraginterp = Text('片段插值', font='LXGW WenKai Lite', font_size=30)
+        txt_fraginterp = Text('片段插值', font='LXGW WenKai GB Lite', font_size=30)
 
         #########################################################
 

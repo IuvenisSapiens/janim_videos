@@ -279,7 +279,7 @@ class ModernGLAndGLFW(SubtitleTemplate2):
 
 
 typ1_src = '''
-#set text(font: "LXGW WenKai Lite")
+#set text(font: "LXGW WenKai GB Lite")
 - 使用 anaconda 等工具创建更高版本的虚拟环境（推荐）
 - 卸载并安装更高版本（不推荐）
 '''

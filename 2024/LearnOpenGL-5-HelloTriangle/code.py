@@ -1462,7 +1462,7 @@ typ1_src = '''
 '''
 
 typ2_src = '''
-#show raw: set text(font: ("Consolas", "LXGW WenKai Lite"))
+#show raw: set text(font: ("Consolas", "LXGW WenKai GB Lite"))
 
 ```glsl
 float

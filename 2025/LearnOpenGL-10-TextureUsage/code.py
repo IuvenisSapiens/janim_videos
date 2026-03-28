@@ -89,7 +89,7 @@ class TextureParamsHighlight(Template):
 class PillowImageNote(TextDisplayTemplate):
     typ_src = t_(
         R"""
-        #set text(font: "Noto Sans S Chinese")
+        #set text(font: "Noto Sans CJK SC")
         #set par(justify: true)
         #box(width: 20em)[
             注意，这里我们载入的本身就已经是 `RGB` 形式的图像，刚好对应 `components=3`，因此不用额外的转换；如果你还需要载入其它的，例如带透明度通道的 `.png` `RGBA` 图像，你可以选择对不同的图像配置不同的 components，或者使用 `.convert('RGBA')` 的方式把图像都统一成一种格式
@@ -453,7 +453,7 @@ class ColorBoxCode(Template):
 class TextureLocationNote(TextDisplayTemplate):
     typ_src = t_(
         R"""
-        #set text(font: "Noto Sans S Chinese")
+        #set text(font: "Noto Sans CJK SC")
         #set par(justify: true)
         #import "@janim/colors:0.0.0": *
         #box(width: 25em)[

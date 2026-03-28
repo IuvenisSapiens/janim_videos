@@ -285,7 +285,7 @@ class TL1(Template):
                 .r
         )
 
-        quest = Text('?', font='Noto Sans S Chinese', font_size=200, fill_alpha=0.3, depth=2)
+        quest = Text('?', font='Noto Sans CJK SC', font_size=200, fill_alpha=0.3, depth=2)
 
         ####################################################
 
@@ -1891,7 +1891,7 @@ class TL11(Template):
         g12.points.arrange(buff=MED_LARGE_BUFF * 1.5)
 
         np.random.seed(114514015)
-        quest = Text('?', font='Noto Sans S Chinese', font_size=64, depth=1, fill_alpha=0.5)
+        quest = Text('?', font='Noto Sans CJK SC', font_size=64, depth=1, fill_alpha=0.5)
         quests = quest * 5
         for q in quests:
             q.points.shift(np.random.random((1,3)) * 3 - 1.5)

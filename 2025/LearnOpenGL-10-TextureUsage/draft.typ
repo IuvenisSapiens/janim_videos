@@ -12,7 +12,7 @@
 
 #set par(justify: true, leading: 0.8em)
 #set text(font: "Noto Serif CJK SC")
-#show raw: set text(font: ("Consolas", "Noto Sans S Chinese"), cjk-latin-spacing: none)
+#show raw: set text(font: ("Consolas", "Noto Sans CJK SC"), cjk-latin-spacing: none)
 
 #let p(pin-name, body, ..args) = pinit-point-to(
   fill: blue.lighten(75%),
@@ -89,7 +89,7 @@ texture = ctx.texture(img.size, components=3, data=img.tobytes())
 
 #p(1, body-dy: -10em)[
   可以做成
-  
+
   ```python
   img = Image.open('container.jpg')
   texture = ctx.texture(img.size, components=3, data=img.tobytes())

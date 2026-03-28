@@ -279,7 +279,7 @@ class Intro2(Template):
 
 
 typ1_src = '''
-#set text(font: "Noto Sans S Chinese")
+#set text(font: "Noto Sans CJK SC")
 #set par(first-line-indent: 2em)
 #set page(width: 38em)
 #par[#box[]]
@@ -966,7 +966,7 @@ class TexRepeat(Template):
         lines = Group(plane.faded_lines, plane.background_lines)
         plane.points.shift(mdl.points.box.get(DL) - plane.c2p(0, 0))
 
-        ques = Text('?', font_size=60, font='LXGW WenKai Lite')
+        ques = Text('?', font_size=60, font='LXGW WenKai GB Lite')
 
         quesg = Group.from_iterable(
             ques.copy()
@@ -2504,7 +2504,7 @@ typ3_src = R'''
 '''
 
 typ4_src = '''
-#set text(font: "Noto Sans S Chinese", size: 0.8em, fill: luma(40%))
+#set text(font: "Noto Sans CJK SC", size: 0.8em, fill: luma(40%))
 #set page(width: 44em)
 #set par(first-line-indent: 2em)
 #par(box())

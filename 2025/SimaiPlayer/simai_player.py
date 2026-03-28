@@ -21,8 +21,8 @@ SLIDE_LAYER = -7
 NOTE_LAYER = -10
 
 ANCHORS_A = np.array([
-    [1.26, 3.07], [3.07, 1.27], [3.05, -1.26], [1.29, -3.07], 
-    [-1.29, -3.07], [-3.08, -1.26], [-3.08, 1.29], [-1.27, 3.1],  
+    [1.26, 3.07], [3.07, 1.27], [3.05, -1.26], [1.29, -3.07],
+    [-1.29, -3.07], [-3.08, -1.26], [-3.08, 1.29], [-1.27, 3.1],
 ]) * 0.9
 ANCHORS_B = np.array([
     [0.62, 1.51], [1.51, 0.62], [1.5, -0.62], [0.61, -1.48],
@@ -61,7 +61,7 @@ class SimaiPlayer(Timeline):
     global_offset = 0
 
     CONFIG = Config(
-        font='Noto Sans S Chinese',
+        font='Noto Sans CJK SC',
     )
 
     def construct(self):
@@ -139,8 +139,8 @@ class SimaiPlayer(Timeline):
                         anims += [
                             *[
                                 SlideItem(
-                                    path, 
-                                    SlideItem.slide_path_to_vpath(border.points.get_anchors(), path, note.location), 
+                                    path,
+                                    SlideItem.slide_path_to_vpath(border.points.get_anchors(), path, note.location),
                                     slide_each or len(note.slide_paths) > 1
                                 ).create_updater(collection.time, path.delay, path.duration)
 
@@ -154,7 +154,7 @@ class SimaiPlayer(Timeline):
 
         tip = Text('前排提示：星星的形状只实现了直线和圆弧，\n其它的形状均被渲染为直线', font_size=16, depth=-20).show()
         tip.points.to_border(UL)
-        
+
         self.play(*anims, at=self.global_offset)
         if audio_t is not None:
             self.forward_to(audio_t.end)
@@ -190,8 +190,8 @@ class TapNoteItem(Circle):
 
     def __init__(self, note: Note, central: np.ndarray, target: np.ndarray, each: bool):
         super().__init__(
-            NOTE_RADIUS, 
-            stroke_radius=0.06, 
+            NOTE_RADIUS,
+            stroke_radius=0.06,
             glow_alpha=2,
             depth=NOTE_LAYER,
             **self.note_styles[(NoteType.Break if note.type == NoteType.Break else note.styles, each)]
@@ -203,10 +203,10 @@ class TapNoteItem(Circle):
         duration = get_norm(self.target - self.central) / speed
         return DataUpdater(
             self,
-            lambda data, p: 
+            lambda data, p:
                 data.points.move_to(
                     interpolate(
-                        self.central, self.target, 
+                        self.central, self.target,
                         p.alpha if p.alpha > CENTRAL_SPACING_FACTOR else CENTRAL_SPACING_FACTOR
                     )
                 ).scale(
@@ -218,7 +218,7 @@ class TapNoteItem(Circle):
             at=time - duration,
             duration=duration
         )
-    
+
 
 class TapComboEffect(RegularPolygon):
     def __init__(self, note: Note, target: np.ndarray):
@@ -243,7 +243,7 @@ class TapComboEffect(RegularPolygon):
             at=time,
             duration=0.25
         )
-    
+
 
 class HoldNoteItem(VItem):
     def __init__(self, note: Note, central: np.ndarray, target: np.ndarray, each: bool):
@@ -269,7 +269,7 @@ class HoldNoteItem(VItem):
 
     def create_updater(self, t1: float, t2: float, speed: float) -> DataUpdater:
         vect = self.target - self.central
-        
+
         duration = get_norm(vect) / speed
         grow_duration = duration * CENTRAL_SPACING_FACTOR
 
@@ -295,7 +295,7 @@ class HoldNoteItem(VItem):
 
             if elapsed < grow_duration:
                 data.points.scale(elapsed / grow_duration)
-            
+
 
         return DataUpdater(
             self,
@@ -307,7 +307,7 @@ class HoldNoteItem(VItem):
             duration=duration + t2 - t1,
             skip_null_items=False
         )
-    
+
 
 class TouchNoteItem(Group):
     def __init__(self, note: Note, each: bool):
@@ -334,7 +334,7 @@ class TouchNoteItem(Group):
         return DataUpdater(
             self,
             lambda data, p: data.points.shift(
-                ((1-p.alpha) * 0.2 + 0.1) 
+                ((1-p.alpha) * 0.2 + 0.1)
                 * normalize(data.points.box.center - self.anchor)
             ),
             rate_func=ease_in_quart,
@@ -344,7 +344,7 @@ class TouchNoteItem(Group):
             at=time - duration,
             duration=duration,
         )
-    
+
 
 class TouchComboEffect(Circle):
     def __init__(self, note: Note):
@@ -356,7 +356,7 @@ class TouchComboEffect(Circle):
             depth=EFFECT_LAYER
         )
         self.points.move_to([*ANCHORS[note.location.group][note.location.index], 0])
-    
+
     def create_updater(self, time: float) -> DataUpdater:
         return DataUpdater(
             self,
@@ -368,7 +368,7 @@ class TouchComboEffect(Circle):
             at=time,
             duration=0.15
         )
-    
+
 
 class FireworkEffect(Text):
     def __init__(self, note: Note):
@@ -379,17 +379,17 @@ class FireworkEffect(Text):
             depth=EFFECT_LAYER
         )
         self.points.move_to([*ANCHORS[note.location.group][note.location.index], 0])
-    
+
     def create_updater(self, time: float) -> Rotating:
         return Rotating(
-            self, 
-            TAU, 
-            at=time, 
+            self,
+            TAU,
+            at=time,
             duration=0.5,
             hide_at_end=True,
             become_at_end=False
         )
-    
+
 
 class TapStarNoteItem(VItem, MarkedItem):
     def __init__(self, note: Note, central: np.ndarray, target: np.ndarray, each: bool):
@@ -404,7 +404,7 @@ class TapStarNoteItem(VItem, MarkedItem):
         if note.is_ex:
             styles['glow_color'] = styles['stroke_color'][1]
         super().__init__(
-            stroke_radius=0.06, 
+            stroke_radius=0.06,
             glow_alpha=2,
             depth=NOTE_LAYER,
             **styles
@@ -432,10 +432,10 @@ class TapStarNoteItem(VItem, MarkedItem):
         duration = get_norm(self.target - self.central) / speed
         return DataUpdater(
             self,
-            lambda data, p: 
+            lambda data, p:
                 data.mark.set(
                     interpolate(
-                        self.central, self.target, 
+                        self.central, self.target,
                         p.alpha if p.alpha > CENTRAL_SPACING_FACTOR else CENTRAL_SPACING_FACTOR
                     )
                 ).r.points.scale(
@@ -450,7 +450,7 @@ class TapStarNoteItem(VItem, MarkedItem):
             at=time - duration,
             duration=duration
         )
-    
+
 
 class SlideItem(VItem):
     def __init__(self, slide_path: SlidePath, path: np.ndarray, each: bool):
@@ -465,7 +465,7 @@ class SlideItem(VItem):
             stroke_color=stroke_color,
         )
         self.points.set(path)
-    
+
     def create_updater(self, time: float, delay: float, duration: float) -> DataUpdater[Self]:
         fadein_duration = 0.3
         def updater(data: VItem, p: UpdaterParams):
@@ -474,8 +474,8 @@ class SlideItem(VItem):
                 data.stroke.fade(1 - elapsed / fadein_duration)
             else:
                 data.points.pointwise_become_partial(
-                    data, 
-                    max(0, (elapsed - fadein_duration - delay) / duration), 
+                    data,
+                    max(0, (elapsed - fadein_duration - delay) / duration),
                     1
                 )
 
@@ -488,7 +488,7 @@ class SlideItem(VItem):
             at=time - fadein_duration,
             duration=delay + duration + fadein_duration,
         )
-    
+
     @staticmethod
     def slide_path_to_vpath(anchors: np.ndarray, path: SlidePath, note_location: Location) -> np.ndarray:
         def location_to_point(location: Location) -> np.ndarray:

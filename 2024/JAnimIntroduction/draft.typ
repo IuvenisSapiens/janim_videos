@@ -1,4 +1,4 @@
-#set text(font: "Noto Sans S Chinese", fill: white)
+#set text(font: "Noto Sans CJK SC", fill: white)
 #set par(justify: true)
 #set page(height: auto, fill: black)
 #show heading: h => box(h, fill: blue.lighten(10%), inset: 5pt, radius: 2pt)

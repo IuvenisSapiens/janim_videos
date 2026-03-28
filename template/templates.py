@@ -3,7 +3,7 @@ from janim.imports import *
 
 class Template(Timeline):
     CONFIG = Config(
-        font=['Consolas', 'Noto Sans S Chinese Medium'],
+        font=['Consolas', 'Noto Sans CJK SC'],
         asset_dir=[
             'assets',
             'audios'
@@ -13,8 +13,8 @@ class Template(Timeline):
         wnd_pos='OO',
         typst_shared_preamble=t_(
             R'''
-            #set text(font: "Noto Sans S Chinese", weight: "medium")
-            #show math.equation: set text(font: ("New Computer Modern Math", "Noto Sans S Chinese"), weight: "medium")
+            #set text(font: "Noto Sans CJK SC", weight: "medium")
+            #show math.equation: set text(font: ("New Computer Modern Math", "Noto Sans CJK SC"), weight: "medium")
             '''
         )
     )
@@ -36,7 +36,7 @@ class TitleTemplate(Template):
     background_color = '#222222'
 
     CONFIG = Config(
-        font=['Consolas', 'Noto Sans S Chinese Medium']
+        font=['Consolas', 'Noto Sans CJK SC']
     )
 
     def construct(self) -> None:

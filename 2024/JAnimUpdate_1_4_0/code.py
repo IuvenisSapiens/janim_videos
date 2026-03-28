@@ -222,7 +222,7 @@ class Desc_PausePoint2(SubtitlesTemplate):
 
 class PausePointExample(Timeline):
     CONFIG = Config(
-        font='LXGW WenKai Lite'
+        font='LXGW WenKai GB Lite'
     )
     def construct(self) -> None:
         txt1 = Text('第一节 42号混凝土')
@@ -455,7 +455,7 @@ class Desc_Other1(TitleObjTemplate):
         t = self.aas(
             '24.mp3',
             '''
-            #set text(font: ("Consolas", "Noto Sans S Chinese"))
+            #set text(font: ("Consolas", "Noto Sans CJK SC"))
             还有一些其它新增的#text("（从 manim 抄来的）", size: 0.7em)动画功能
             ''',
             use_typst_text=True

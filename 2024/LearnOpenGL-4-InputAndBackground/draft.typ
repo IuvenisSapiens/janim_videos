@@ -7,7 +7,7 @@
 #set par(justify: true, leading: 0.8em)
 #set text(font: "Noto Serif CJK SC")
 
-#show raw: set text(font: ("Source Code Pro", "Noto Sans S Chinese"))
+#show raw: set text(font: ("Source Code Pro", "Noto Sans CJK SC"))
 
 #show raw: r => {
   if r.block {
