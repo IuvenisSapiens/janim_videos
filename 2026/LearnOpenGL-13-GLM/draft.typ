@@ -21,7 +21,7 @@
 
 #let li = math.macron
 
-#import "@preview/zebraw:0.6.1": *
+#import "@preview/zebraw:0.6.3": *
 #show: zebraw
 
 #set page(numbering: "1")

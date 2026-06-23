@@ -1,4 +1,4 @@
-#import "@preview/pinit:0.2.0": *
+#import "@preview/pinit:0.2.2": *
 
 #show heading: set text(fill: blue)
 
